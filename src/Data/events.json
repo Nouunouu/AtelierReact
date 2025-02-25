@@ -16,7 +16,8 @@
       "price": 15,
       "nbTickets": 4,
       "nbParticipants": 30,
-      "like": false
+      "like": false,
+      "Lieu" : "Tunis"
     },
     {
       "name": "Journées cinématographiques de Carthage (JCC)",
@@ -25,6 +26,7 @@
       "price": 7,
       "nbTickets": 20,
       "nbParticipants": 35,
-      "like": false
+      "like": false,
+      "Lieu" : "Carthage"
     }
   ]

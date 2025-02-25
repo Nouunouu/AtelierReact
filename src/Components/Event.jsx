@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
+import { Link } from "react-router-dom";
 
 export default function Event(props) {
   const [event, setEvent] = useState(props.event);
@@ -28,22 +29,26 @@ export default function Event(props) {
             borderTopRightRadius: "15px",
             filter: event.nbTickets === 0 ? "grayscale(100%)" : "none",
           }}
-          
-         src={
-     event.nbTickets === 0
-      ? "/Images/F5.jpg"  
-      : event.img
-  }
+          src={event.nbTickets === 0 ? "/Images/F5.jpg" : event.img}
           alt={event.name}
         />
         <Card.Body>
-          <Card.Title className="text-center">{event.name}</Card.Title>
+          <Card.Title className="text-center">
+            <Link to={`/events/${event.name}`} className="text-primary text-decoration-none">
+              {event.name}
+            </Link>
+          </Card.Title>
           <Card.Text className="text-center">
             <Badge bg="success" className="me-1">
               Price: {event.price} TND
             </Badge>
-            <Badge bg={event.nbTickets === 0 ? "danger" : "info"} className="me-1">
-              {event.nbTickets === 0 ? "Sold Out" : `Tickets: ${event.nbTickets}`}
+            <Badge
+              bg={event.nbTickets === 0 ? "danger" : "info"}
+              className="me-1"
+            >
+              {event.nbTickets === 0
+                ? "Sold Out"
+                : `Tickets: ${event.nbTickets}`}
             </Badge>
             <Badge bg="primary" className="me-1">
               Participants: {event.nbParticipants}

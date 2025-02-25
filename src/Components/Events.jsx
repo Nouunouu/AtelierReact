@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Event from "./Event";
 import Row from "react-bootstrap/Row";
 import Alert from 'react-bootstrap/Alert';
+import NavBar from "./NavigationBar";
 
 export default function Events() {
     const [showAlert, setShowAlert] = useState(false);
